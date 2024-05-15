@@ -1,0 +1,166 @@
+.containerHeader{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right,#373738, #070707);
+}
+
+.Header{
+    margin: 25px;
+}
+
+.title{
+ color: #fcda6c;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+  font-size: 80px;
+  transition: 6s ease;
+}
+
+.title:hover{
+    font-size: 90px;
+    font-weight: 450;
+    transition: 4s ease;
+}
+
+.bodyFolio{
+    padding: 25px;
+    background-color: rgba(242, 244, 247, 0.779);
+}
+
+.containerBody{
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right,#3d3d3d, #000000);
+    border-radius: 15px; 
+}
+
+.Texts{
+    color: #DBD0AD;
+    padding-left: 20%;
+}
+
+.welcomeMessage{
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border-bottom: 1px solid transparent;
+    transition: 1s ease; 
+}
+
+.welcomeMessage:hover{
+    /*text-decoration: underline;*/
+    font-weight: 500;
+    transition: 2.5s ease;
+    border-color: #DBD0AD;
+}
+
+.Subtitle{
+    font-weight: 450;
+    margin-bottom: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.textBody{
+    margin-bottom: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.buttonsDiv{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.buttonAbout{
+    background-color: #DBD0AD;
+    padding: 8px;
+    width: 130px;
+    margin-bottom: 6px;
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 3px;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.buttonAbout:hover{
+    background-color: #9a6145;
+    padding: 8px;
+    width: 130px;
+    font-weight: 700;
+    color: #30221b;
+    margin-bottom: 6px;
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 8px;
+    transition: .3s linear;
+}
+
+.buttonWork{
+    background-color: #DBD0AD;
+    padding: 8px;
+    width: 130px;
+    margin-bottom: 6px;
+    margin-left: 50px;
+    border-radius: 3px;
+    font-weight: 550;
+    transition: .3s linear;
+}
+
+.buttonWork:hover{
+    background-color: #9a6145;
+    padding: 8px;
+    width: 130px;
+    font-weight: 700;
+    color: #30221b;
+    margin-bottom: 6px;
+    margin-left: 50px;
+    border-radius: 8px;
+    transition: .3s linear;
+}
+
+
+.buttonContact{
+    background-color: #6df760;
+    padding: 10px;
+    width: 130px;
+    font-weight: 550;
+    margin-left: 50px;
+    margin-top: 35px;
+    border-radius: 3px;
+    transition: 0.5s linear;
+}
+
+.buttonContact:hover{
+    background-color: #2c9623;
+    color: aliceblue;
+    font-weight: 700;
+    padding: 10px;
+    width: 130px;
+    margin-left: 50px;
+    margin-top: 35px;
+    border-radius: 8px;
+    transition: .3s linear;
+}
+
+.myPhoto{
+    opacity: 1;
+    margin-left: auto;
+    border-radius: 0 15px 15px 0;
+    padding-top: 4px;
+}
