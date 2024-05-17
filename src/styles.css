@@ -195,3 +195,102 @@
 .containerBody:hover .sideMenu.open {
   right: 0;
 }
+
+
+/* --RESPONSIVE DESING-- (Media query for mobile screens) */
+
+@media (max-width: 768px) {
+  .AppHeader {
+    padding: 30px 15px;
+    height: auto;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .bodyFolio {
+    padding: 20px 15px;
+  }
+  
+  .containerBody {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: auto; /* Adjusted height for mobile */
+  }
+  
+  .Texts {
+    padding-left: 0;
+    text-align: center;
+  }
+  
+  .welcomeMessage {
+    font-size: 24px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+  
+  .textBody{
+    font-size: 18px;
+  }
+
+  .buttonsDiv {
+    align-items: center;
+  }
+  
+  .buttonAbout, .buttonWork, .buttonContact {
+    padding: 8px 12px;
+    width: auto;
+    margin: 6px 0;
+  }
+  
+  .myPhoto {
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .sideMenu {
+    height: 425px;
+    width: 100%;
+    position: absolute;
+    top: 380px;
+    right: 0;
+    left: 0;
+    width: 2px;
+    overflow-x: hidden;
+    transition: 2s;
+    padding-top: 60px;
+    overflow-y: auto;
+    visibility: hidden;
+    border-radius: 5px;
+    background: linear-gradient(to right, #111, #000000);
+  }
+  
+  .sideMenu.open {
+    width: 100%;
+    right: 0;
+    left: 0;
+    visibility:  visible;
+  }
+  
+  .sideMenu .closeBtn {
+    right: 15px;
+    font-size: 24px;
+    color: #818181;
+  }
+  
+  .menuContent a {
+    padding: 16px;
+    font-size: 18px;
+    color: #818181;
+  }
+  
+  .menuText {
+    padding: 16px;
+    color: #818181;
+    font-size: 16px;
+  }
+}
