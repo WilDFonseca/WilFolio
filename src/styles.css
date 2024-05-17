@@ -55,6 +55,7 @@
     font-style: normal;
     border-bottom: 1px solid transparent;
     transition: 1s ease;
+    width: 45%;
   }
   
   .welcomeMessage:hover {
@@ -119,7 +120,7 @@
   
   .myPhotoDiv {
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 3s ease-out;
   }
   
   .myPhotoDiv.fade {
@@ -133,22 +134,24 @@
   }
   
   .sideMenu {
-    height: 100%;
-    width: 250px;
+    /*height: 100%;
+    width: 250px;*/
     position: absolute;
     top: 0;
     right: -250px;
-    background-color: #111;
+    background: linear-gradient(to right, #111, #000000);
     overflow-x: hidden;
-    transition: right 0.5s, width 0.5s;;
+    transition: right 0.5s, width 0.5s;
     padding-top: 60px;
     overflow-y: auto;
     display: none;
+    transition: 1s ease;
   }
   
   .sideMenu.open {
     right: 0;
     display: block;
+    width: 55%;
   }
   
   .sideMenu .closeBtn {
@@ -186,8 +189,6 @@
     margin-bottom: 8px;
   }
 
-
-  * Ensure side menu sticks inside container body only when open */
 .containerBody:hover .sideMenu.open {
   right: 0;
 }

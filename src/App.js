@@ -1,17 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import './styles.css';
+import Accordion from './Accordion';
 
 function App() {
   const [activeMenu, setActiveMenu] = useState(null);
-  const [menuHeight, setMenuHeight] = useState(600); // Initial menu height
-
-  const menuContentRef = useRef(null);
-
-  useEffect(() => {
-    if (menuContentRef.current) {
-      setMenuHeight(menuContentRef.current.scrollHeight);
-    }
-  }, [activeMenu]);
 
   const toggleSideMenu = (menu) => {
     if (activeMenu === menu) {
@@ -20,6 +12,24 @@ function App() {
       setActiveMenu(menu);
     }
   };
+
+  const aboutMeSections = [
+    { title: 'My Story', content: 'This is my story...' },
+    { title: 'My CV', content: 'This is my CV...' },
+    { title: 'Challenges and Achievements', content: 'These are my challenges and achievements...' }
+  ];
+
+  const myWorkSections = [
+    { title: 'Digital Product Business Case', content: 'This is my Digital Product Business Case...' },
+    { title: 'My Projects', content: 'These are my projects...' },
+    { title: 'GitHub', content: 'Here is my GitHub...' }
+  ];
+
+  const contactMeSections = [
+    { title: 'Contact me by WhatsApp', content: 'My WhatsApp...' },
+    { title: 'Contact me by Email', content: 'My Email...' },
+    { title: 'Contact me by LinkedIn', content: 'My LinkedIn...' }
+  ];
 
   return (
     <div className="App">
@@ -42,67 +52,13 @@ function App() {
           <div className={`myPhotoDiv ${activeMenu ? 'fade' : ''}`}>
             <img src="./images/cv.jpg" alt="Wildney Fonseca Professional Photo" className='myPhoto' width="480" height="600"></img>
           </div>
-
-              <div className={`sideMenu ${activeMenu ? 'open' : ''}`} style={{ height: menuHeight }}>
-              <a href="javascript:void(0)" className="closeBtn" onClick={() => setActiveMenu(null)}>&times;</a>
-              <div className="menuContent" ref={menuContentRef}>
-                {activeMenu === 'aboutMe' && (
-                        <>
-                          <div className="menuText">
-                            <a href="#story">My Story</a>
-                            <h3>My Story</h3>
-                            <p>This is my story...</p>
-                          </div>
-                          <div className="menuText">
-                          <a href="#cv">My CV</a>
-                            <h3>My CV</h3>
-                            <p>This is my CV...</p>
-                          </div>
-                          <div className="menuText">
-                          <a href="#achievements">Challenges and Achievements</a>
-                            <h3>Challenges and Achievements</h3>
-                            <p>These are my challenges and achievements...</p>
-                          </div>
-                        </>
-                    )}
-                  {activeMenu === 'myWork' && (
-                        <>
-                        <div className="menuText">
-                        <a href="#Digital Product">Digital Product Business Case</a>
-                          <h3>Digital Product Business Case</h3>
-                          <p>This is my Digital Product Business Case...</p>
-                        </div>
-                        <div className="menuText">
-                        <a href="#My projects">My projects</a>
-                          <h3>My projects</h3>
-                          <p>This is my My projects...</p>
-                        </div>
-                        <div className="menuText">
-                        <a href="#GitHub">My GitHub</a>
-                          <h3>GitHub</h3>
-                          <p>Here is my GitHub...</p>
-                        </div>
-                      </>
-                    )}
-                  {activeMenu === 'contactMe' && (
-                     <>
-                     <div className="menuText">
-                     <a href="#story">Contact me by Whatsapp</a>
-                       <h3>Contact me by Whatsapp</h3>
-                       <p>My Whatsapp</p>
-                     </div>
-                     <div className="menuText">
-                     <a href="#cv">Contact me by Email</a>
-                       <h3>Contact me by Email</h3>
-                       <p>My Email</p>
-                     </div>
-                     <div className="menuText">
-                     <a href="#achievements">Contact me by LinkedIn</a>
-                       <h3>Contact me by LinkedIn</h3>
-                       <p>My LinkedIn</p>
-                     </div>
-                   </>
-            )}
+          
+          <div className={`sideMenu ${activeMenu ? 'open' : ''}`}>
+            <a href="javascript:void(0)" className="closeBtn" onClick={() => setActiveMenu(null)}>&times;</a>
+            <div className="menuContent">
+              {activeMenu === 'aboutMe' && <Accordion sections={aboutMeSections} />}
+              {activeMenu === 'myWork' && <Accordion sections={myWorkSections} />}
+              {activeMenu === 'contactMe' && <Accordion sections={contactMeSections} />}
             </div>
           </div>
         </div>
