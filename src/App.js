@@ -48,18 +48,18 @@ function App() {
               <div className="menuContent" ref={menuContentRef}>
                 {activeMenu === 'aboutMe' && (
                         <>
-                          <a href="#story">My Story</a>
-                          <a href="#cv">My CV</a>
-                          <a href="#achievements">Challenges and Achievements</a>
                           <div className="menuText">
+                            <a href="#story">My Story</a>
                             <h3>My Story</h3>
                             <p>This is my story...</p>
                           </div>
                           <div className="menuText">
+                          <a href="#cv">My CV</a>
                             <h3>My CV</h3>
                             <p>This is my CV...</p>
                           </div>
                           <div className="menuText">
+                          <a href="#achievements">Challenges and Achievements</a>
                             <h3>Challenges and Achievements</h3>
                             <p>These are my challenges and achievements...</p>
                           </div>
@@ -67,18 +67,18 @@ function App() {
                     )}
                   {activeMenu === 'myWork' && (
                         <>
-                        <a href="#Digital Product">Digital Product Business Case</a>
-                        <a href="#My projects">My projects</a>
-                        <a href="#GitHub">My GitHub</a>
                         <div className="menuText">
+                        <a href="#Digital Product">Digital Product Business Case</a>
                           <h3>Digital Product Business Case</h3>
                           <p>This is my Digital Product Business Case...</p>
                         </div>
                         <div className="menuText">
+                        <a href="#My projects">My projects</a>
                           <h3>My projects</h3>
                           <p>This is my My projects...</p>
                         </div>
                         <div className="menuText">
+                        <a href="#GitHub">My GitHub</a>
                           <h3>GitHub</h3>
                           <p>Here is my GitHub...</p>
                         </div>
@@ -86,18 +86,18 @@ function App() {
                     )}
                   {activeMenu === 'contactMe' && (
                      <>
-                     <a href="#story">Contact me by Whatsapp</a>
-                     <a href="#cv">Contact me by Email</a>
-                     <a href="#achievements">Contact me by LinkedIn</a>
                      <div className="menuText">
+                     <a href="#story">Contact me by Whatsapp</a>
                        <h3>Contact me by Whatsapp</h3>
                        <p>My Whatsapp</p>
                      </div>
                      <div className="menuText">
+                     <a href="#cv">Contact me by Email</a>
                        <h3>Contact me by Email</h3>
                        <p>My Email</p>
                      </div>
                      <div className="menuText">
+                     <a href="#achievements">Contact me by LinkedIn</a>
                        <h3>Contact me by LinkedIn</h3>
                        <p>My LinkedIn</p>
                      </div>
