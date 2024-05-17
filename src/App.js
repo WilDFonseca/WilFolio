@@ -1,31 +1,112 @@
-import './styles.css'
-
-
+import React, { useState, useRef, useEffect } from 'react';
+import './styles.css';
 
 function App() {
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [menuHeight, setMenuHeight] = useState(600); // Initial menu height
+
+  const menuContentRef = useRef(null);
+
+  useEffect(() => {
+    if (menuContentRef.current) {
+      setMenuHeight(menuContentRef.current.scrollHeight);
+    }
+  }, [activeMenu]);
+
+  const toggleSideMenu = (menu) => {
+    if (activeMenu === menu) {
+      setActiveMenu(null);
+    } else {
+      setActiveMenu(menu);
+    }
+  };
+
   return (
-    <div className="containerHeader">
-        <div className = "Header">
-          <h1 className= "title">Wildney Fonseca</h1>
-            <hr></hr>
-            </div>
-        <div className="bodyFolio">
-          <div className='containerBody'>
-            <div className="Texts">
-              <h3 className="welcomeMessage">Welcome!</h3>
-              <h2 className="Subtitle">My name is Wildney</h2>
-              <p className="textBody">I'm a Product Owner and a Full Stack developer <br/> Here you can lear more about me and my work! </p>
-              <div className="buttonsDiv">
-                <button className="buttonAbout">About Me</button>
-                <button className="buttonWork">My Work</button>
-                <button className="buttonContact">Contact Me</button>
-              </div>
-            </div>
-            <div className='myPhotoDiv'>
-              <img src="./images/cv.jpg" alt="Wildney Fonseca Professional Photo" className='myPhoto' width="375" height="500"></img>
+    <div className="App">
+      <div className="AppHeader">
+        <h1 className="title">Wildney Fonseca</h1>
+        <hr></hr>
+      </div>
+      <div className="bodyFolio">
+        <div className='containerBody'>
+          <div className="Texts">
+            <h3 className="welcomeMessage">Welcome!</h3>
+            <h2 className="Subtitle">My name is Wildney</h2>
+            <p className="textBody">I'm a Product Owner and a Full Stack developer <br /> Here you can learn more about me and my work!</p>
+            <div className="buttonsDiv">
+              <a className="buttonAbout" onClick={() => toggleSideMenu('aboutMe')}>About Me</a>
+              <a className="buttonWork" onClick={() => toggleSideMenu('myWork')}>My Work</a>
+              <a className="buttonContact" onClick={() => toggleSideMenu('contactMe')}>Contact Me</a>
             </div>
           </div>
-        </div> 
+          <div className={`myPhotoDiv ${activeMenu ? 'fade' : ''}`}>
+            <img src="./images/cv.jpg" alt="Wildney Fonseca Professional Photo" className='myPhoto' width="480" height="600"></img>
+          </div>
+
+              <div className={`sideMenu ${activeMenu ? 'open' : ''}`} style={{ height: menuHeight }}>
+              <a href="javascript:void(0)" className="closeBtn" onClick={() => setActiveMenu(null)}>&times;</a>
+              <div className="menuContent" ref={menuContentRef}>
+                {activeMenu === 'aboutMe' && (
+                        <>
+                          <a href="#story">My Story</a>
+                          <a href="#cv">My CV</a>
+                          <a href="#achievements">Challenges and Achievements</a>
+                          <div className="menuText">
+                            <h3>My Story</h3>
+                            <p>This is my story...</p>
+                          </div>
+                          <div className="menuText">
+                            <h3>My CV</h3>
+                            <p>This is my CV...</p>
+                          </div>
+                          <div className="menuText">
+                            <h3>Challenges and Achievements</h3>
+                            <p>These are my challenges and achievements...</p>
+                          </div>
+                        </>
+                    )}
+                  {activeMenu === 'myWork' && (
+                        <>
+                        <a href="#Digital Product">Digital Product Business Case</a>
+                        <a href="#My projects">My projects</a>
+                        <a href="#GitHub">My GitHub</a>
+                        <div className="menuText">
+                          <h3>Digital Product Business Case</h3>
+                          <p>This is my Digital Product Business Case...</p>
+                        </div>
+                        <div className="menuText">
+                          <h3>My projects</h3>
+                          <p>This is my My projects...</p>
+                        </div>
+                        <div className="menuText">
+                          <h3>GitHub</h3>
+                          <p>Here is my GitHub...</p>
+                        </div>
+                      </>
+                    )}
+                  {activeMenu === 'contactMe' && (
+                     <>
+                     <a href="#story">Contact me by Whatsapp</a>
+                     <a href="#cv">Contact me by Email</a>
+                     <a href="#achievements">Contact me by LinkedIn</a>
+                     <div className="menuText">
+                       <h3>Contact me by Whatsapp</h3>
+                       <p>My Whatsapp</p>
+                     </div>
+                     <div className="menuText">
+                       <h3>Contact me by Email</h3>
+                       <p>My Email</p>
+                     </div>
+                     <div className="menuText">
+                       <h3>Contact me by LinkedIn</h3>
+                       <p>My LinkedIn</p>
+                     </div>
+                   </>
+            )}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
