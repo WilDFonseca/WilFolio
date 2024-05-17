@@ -120,7 +120,7 @@
   
   .myPhotoDiv {
     opacity: 1;
-    transition: opacity 3s ease-out;
+    transition: opacity 3s ease;
   }
   
   .myPhotoDiv.fade {
@@ -134,24 +134,26 @@
   }
   
   .sideMenu {
-    /*height: 100%;
-    width: 250px;*/
+    height: 540px;
+    width: 2px;
     position: absolute;
     top: 0;
-    right: -250px;
+    right: 0px;
     background: linear-gradient(to right, #111, #000000);
     overflow-x: hidden;
-    transition: right 0.5s, width 0.5s;
+    transition: 1s;
     padding-top: 60px;
     overflow-y: auto;
-    display: none;
-    transition: 1s ease;
+    visibility: hidden;
+    transition: 4s ease;
+    border-radius: 5px;
   }
   
   .sideMenu.open {
     right: 0;
-    display: block;
+    visibility:  visible;
     width: 55%;
+    transition: 4s ease;
   }
   
   .sideMenu .closeBtn {
@@ -161,6 +163,7 @@
     font-size: 36px;
     margin-left: 50px;
     color: #818181;
+    transition: 4s ease;
   }
   
   .menuContent a {
