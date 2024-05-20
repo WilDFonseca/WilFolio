@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wilfolio/static/css/main.90db1c35.css",
+    "main.js": "/wilfolio/static/js/main.0c718042.js",
+    "index.html": "/wilfolio/index.html",
+    "main.90db1c35.css.map": "/wilfolio/static/css/main.90db1c35.css.map",
+    "main.0c718042.js.map": "/wilfolio/static/js/main.0c718042.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90db1c35.css",
+    "static/js/main.0c718042.js"
+  ]
+}

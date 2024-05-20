@@ -2,7 +2,7 @@
   "name": "wilfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wildfonseca.github.io/wilfolio/",
+  "homepage": "https://wildfonseca.github.io/wilfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
